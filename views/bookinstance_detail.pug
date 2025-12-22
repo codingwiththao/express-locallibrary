@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+
+  dl
+    dt Book
+    dd
+      a(href=bookinstance.book.url)= bookinstance.book.title
+
+    dt Status
+    dd= bookinstance.status
+
+    dt Imprint
+    dd= bookinstance.imprint
+
+    if bookinstance.due_back_formatted
+      dt Due back
+      dd= bookinstance.due_back_formatted

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  if errors && errors.length > 0
+  ul
+    each error in errors
+      li= error.msg
+
+  form(method='POST')
+    div.form-group
+      label(for='first_name') First name:
+      input#first_name.form-control(
+        type='text',
+        name='first_name',
+        value=(author ? author.first_name : '')
+      )
+
+    div.form-group
+      label(for='family_name') Family name:
+      input#family_name.form-control(
+      type='text',
+      name='family_name',
+      value=(author ? author.family_name : '')
+    )
+    
+    button.btn.btn-primary(type='submit') Submit
