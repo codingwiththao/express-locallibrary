@@ -1,5 +1,8 @@
 require("dotenv").config();
 
+const compression = require("compression");
+const helmet = require("helmet");
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -13,6 +16,7 @@ const usersRouter = require('./routes/users');
 const catalogRouter = require("./routes/catalog"); //Import routes for "catalog" area of site
 
 const app = express();
+app.use(compression());
 
 // view engine setup
 // eslint-disable-next-line no-undef
