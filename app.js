@@ -17,6 +17,7 @@ const catalogRouter = require("./routes/catalog"); //Import routes for "catalog"
 
 const app = express();
 app.use(compression());
+app.use(helmet());
 
 // view engine setup
 // eslint-disable-next-line no-undef
